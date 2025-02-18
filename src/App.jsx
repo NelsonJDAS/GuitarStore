@@ -2,268 +2,51 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Header from './Components/Header'
+import Guitar from './Components/Guitar'
 
 function App() {
     const [count, setCount] = useState(0)
 
     return (
         <>
-            <header class="py-5 header">
-                <div class="container-xl">
-                    <div class="row justify-content-center justify-content-md-between">
-                        <div class="col-8 col-md-3">
-                            <a href="index.html">
-                                <img class="img-fluid" src="./public/img/logo.svg" alt="imagen logo" />
-                            </a>
-                        </div>
-                        <nav class="col-md-6 a mt-5 d-flex align-items-start justify-content-end">
-                            <div
-                                class="carrito"
-                            >
-                                <img class="img-fluid" src="./public/img/carrito.png" alt="imagen carrito" />
+            <Header />
 
-                                <div id="carrito" class="bg-white p-3">
-                                    <p class="text-center">El carrito esta vacio</p>
-                                    <table class="w-100 table">
-                                        <thead>
-                                            <tr>
-                                                <th>Imagen</th>
-                                                <th>Nombre</th>
-                                                <th>Precio</th>
-                                                <th>Cantidad</th>
-                                                <th></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <img class="img-fluid" src="./public/img/guitarra_02.jpg" alt="imagen guitarra" />
-                                                </td>
-                                                <td>SRV</td>
-                                                <td class="fw-bold">
-                                                    $299
-                                                </td>
-                                                <td class="flex align-items-start gap-4">
-                                                    <button
-                                                        type="button"
-                                                        class="btn btn-dark"
-                                                    >
-                                                        -
-                                                    </button>
-                                                    1
-                                                    <button
-                                                        type="button"
-                                                        class="btn btn-dark"
-                                                    >
-                                                        +
-                                                    </button>
-                                                </td>
-                                                <td>
-                                                    <button
-                                                        class="btn btn-danger"
-                                                        type="button"
-                                                    >
-                                                        X
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+            <main className="container-xl mt-5">
+                <h2 className="text-center">Nuestra Colección</h2>
 
-                                    <p class="text-end">Total pagar: <span class="fw-bold">$899</span></p>
-                                    <button class="btn btn-dark w-100 mt-3 p-2">Vaciar Carrito</button>
-                                </div>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </header>
+                <div className="row mt-5">
+                    <Guitar nombre="Lukather" img="./public/img/guitarra_01.jpg" descripcion="Sonido potente y versátil, ideal para cualquier estilo musical." precio="$299.99" />
 
-            <main class="container-xl mt-5">
-                <h2 class="text-center">Nuestra Colección</h2>
+                    <Guitar nombre="SRV" img="./public/img/guitarra_02.jpg" descripcion="Diseño clásico con acabados premium y una calidad de sonido excepcional." precio="$349.99" />
 
-                <div class="row mt-5">
-                    <div class="col-md-6 col-lg-4 my-4 row align-items-center">
-                        <div class="col-4">
-                            <img class="img-fluid" src="./public/img/guitarra_01.jpg" alt="imagen guitarra" />
-                        </div>
-                        <div class="col-8">
-                            <h3 class="text-black fs-4 fw-bold text-uppercase">Lukather</h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quae labore odit magnam in autem nesciunt, amet deserunt</p>
-                            <p class="fw-black text-primary fs-3">$299</p>
-                            <button
-                                type="button"
-                                class="btn btn-dark w-100"
-                            >Agregar al Carrito</button>
-                        </div>
-                    </div>
+                    <Guitar nombre="Borland" img="./public/img/guitarra_03.jpg" descripcion="Perfecta para solos y riffs, con una gran estabilidad en la afinación." precio="$279.99" />
 
-                    <div class="col-md-6 col-lg-4 my-4 row align-items-center">
-                        <div class="col-4">
-                            <img class="img-fluid" src="./public/img/guitarra_02.jpg" alt="imagen guitarra" />
-                        </div>
-                        <div class="col-8">
-                            <h3 class="text-black fs-4 fw-bold text-uppercase">SRV</h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quae labore odit magnam in autem nesciunt, amet deserunt</p>
-                            <p class="fw-black text-primary fs-3">$299</p>
-                            <button
-                                type="button"
-                                class="btn btn-dark w-100 "
-                            >Agregar al Carrito</button>
-                        </div>
-                    </div>
+                    <Guitar nombre="Vai" img="./public/img/guitarra_04.jpg" descripcion="Cuerpo ligero y cómodo, ideal para largas sesiones de práctica." precio="$399.99" />
 
-                    <div class="col-md-6 col-lg-4 my-4 row align-items-center">
-                        <div class="col-4">
-                            <img class="img-fluid" src="./public/img/guitarra_03.jpg" alt="imagen guitarra" />
-                        </div>
-                        <div class="col-8">
-                            <h3 class="text-black fs-4 fw-bold text-uppercase">Borland</h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quae labore odit magnam in autem nesciunt, amet deserunt</p>
-                            <p class="fw-black text-primary fs-3">$299</p>
-                            <button
-                                type="button"
-                                class="btn btn-dark w-100 "
-                            >Agregar al Carrito</button>
-                        </div>
-                    </div>
+                    <Guitar nombre="Thompson" img="./public/img/guitarra_05.jpg" descripcion="Sonido cálido y resonante, con un sustain impresionante." precio="$259.99" />
 
-                    <div class="col-md-6 col-lg-4 my-4 row align-items-center">
-                        <div class="col-4">
-                            <img class="img-fluid" src="./public/img/guitarra_04.jpg" alt="imagen guitarra" />
-                        </div>
-                        <div class="col-8">
-                            <h3 class="text-black fs-4 fw-bold text-uppercase">Vai</h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quae labore odit magnam in autem nesciunt, amet deserunt</p>
-                            <p class="fw-black text-primary fs-3">$299</p>
-                            <button
-                                type="button"
-                                class="btn btn-dark w-100 "
-                            >Agregar al Carrito</button>
-                        </div>
-                    </div>
+                    <Guitar nombre="White" img="./public/img/guitarra_06.jpg" descripcion="Excelente calidad de construcción con una electrónica impecable." precio="$319.99" />
 
-                    <div class="col-md-6 col-lg-4 my-4 row align-items-center">
-                        <div class="col-4">
-                            <img class="img-fluid" src="./public/img/guitarra_05.jpg" alt="imagen guitarra" />
-                        </div>
-                        <div class="col-8">
-                            <h3 class="text-black fs-4 fw-bold text-uppercase">Thompson</h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quae labore odit magnam in autem nesciunt, amet deserunt</p>
-                            <p class="fw-black text-primary fs-3">$299</p>
-                            <button
-                                type="button"
-                                class="btn btn-dark w-100 "
-                            >Agregar al Carrito</button>
-                        </div>
-                    </div>
+                    <Guitar nombre="Cobain" img="./public/img/guitarra_07.jpg" descripcion="Tonos profundos y expresivos, perfecta para rock y grunge." precio="$289.99" />
 
-                    <div class="col-md-6 col-lg-4 my-4 row align-items-center">
-                        <div class="col-4">
-                            <img class="img-fluid" src="./public/img/guitarra_06.jpg" alt="imagen guitarra" />
-                        </div>
-                        <div class="col-8">
-                            <h3 class="text-black fs-4 fw-bold text-uppercase">White</h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quae labore odit magnam in autem nesciunt, amet deserunt</p>
-                            <p class="fw-black text-primary fs-3">$299</p>
-                            <button
-                                type="button"
-                                class="btn btn-dark w-100 "
-                            >Agregar al Carrito</button>
-                        </div>
-                    </div>
+                    <Guitar nombre="Dale" img="./public/img/guitarra_08.jpg" descripcion="Una joya vintage con un sonido inigualable y gran versatilidad." precio="$369.99" />
 
-                    <div class="col-md-6 col-lg-4 my-4 row align-items-center">
-                        <div class="col-4">
-                            <img class="img-fluid" src="./public/img/guitarra_07.jpg" alt="imagen guitarra" />
-                        </div>
-                        <div class="col-8">
-                            <h3 class="text-black fs-4 fw-bold text-uppercase">Cobain</h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quae labore odit magnam in autem nesciunt, amet deserunt</p>
-                            <p class="fw-black text-primary fs-3">$299</p>
-                            <button
-                                type="button"
-                                class="btn btn-dark w-100 "
-                            >Agregar al Carrito</button>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 my-4 row align-items-center">
-                        <div class="col-4">
-                            <img class="img-fluid" src="./public/img/guitarra_08.jpg" alt="imagen guitarra" />
-                        </div>
-                        <div class="col-8">
-                            <h3 class="text-black fs-4 fw-bold text-uppercase">Dale</h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quae labore odit magnam in autem nesciunt, amet deserunt</p>
-                            <p class="fw-black text-primary fs-3">$299</p>
-                            <button
-                                type="button"
-                                class="btn btn-dark w-100 "
-                            >Agregar al Carrito</button>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 my-4 row align-items-center">
-                        <div class="col-4">
-                            <img class="img-fluid" src="./public/img/guitarra_09.jpg" alt="imagen guitarra" />
-                        </div>
-                        <div class="col-8">
-                            <h3 class="text-black fs-4 fw-bold text-uppercase">Krieger</h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quae labore odit magnam in autem nesciunt, amet deserunt</p>
-                            <p class="fw-black text-primary fs-3">$299</p>
-                            <button
-                                type="button"
-                                class="btn btn-dark w-100 "
-                            >Agregar al Carrito</button>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 my-4 row align-items-center">
-                        <div class="col-4">
-                            <img class="img-fluid" src="./public/img/guitarra_10.jpg" alt="imagen guitarra" />
-                        </div>
-                        <div class="col-8">
-                            <h3 class="text-black fs-4 fw-bold text-uppercase">Campbell</h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quae labore odit magnam in autem nesciunt, amet deserunt</p>
-                            <p class="fw-black text-primary fs-3">$299</p>
-                            <button
-                                type="button"
-                                class="btn btn-dark w-100 "
-                            >Agregar al Carrito</button>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 my-4 row align-items-center">
-                        <div class="col-4">
-                            <img class="img-fluid" src="./public/img/guitarra_11.jpg" alt="imagen guitarra" />
-                        </div>
-                        <div class="col-8">
-                            <h3 class="text-black fs-4 fw-bold text-uppercase">Reed</h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quae labore odit magnam in autem nesciunt, amet deserunt</p>
-                            <p class="fw-black text-primary fs-3">$299</p>
-                            <button
-                                type="button"
-                                class="btn btn-dark w-100 "
-                            >Agregar al Carrito</button>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4 my-4 row align-items-center">
-                        <div class="col-4">
-                            <img class="img-fluid" src="./public/img/guitarra_12.jpg" alt="imagen guitarra" />
-                        </div>
-                        <div class="col-8">
-                            <h3 class="text-black fs-4 fw-bold text-uppercase">Hazel</h3>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit quae labore odit magnam in autem nesciunt, amet deserunt</p>
-                            <p class="fw-black text-primary fs-3">$299</p>
-                            <button
-                                type="button"
-                                class="btn btn-dark w-100 "
-                            >Agregar al Carrito</button>
-                        </div>
-                    </div>
+                    <Guitar nombre="Krieger" img="./public/img/guitarra_09.jpg" descripcion="Materiales de alta calidad que garantizan un sonido envolvente." precio="$409.99" />
+
+                    <Guitar nombre="Campbell" img="./public/img/guitarra_10.jpg" descripcion="Diseñada para músicos exigentes que buscan lo mejor." precio="$459.99" />
+
+                    <Guitar nombre="Reed" img="./public/img/guitarra_11.jpg" descripcion="Una combinación perfecta entre potencia y sensibilidad sonora." precio="$299.99" />
+
+                    <Guitar nombre="Hazel" img="./public/img/guitarra_12.jpg" descripcion="Versatilidad total, ideal para cualquier tipo de escenario." precio="$329.99" />
+
                 </div>
             </main>
 
 
-            <footer class="bg-dark mt-5 py-5">
-                <div class="container-xl">
-                    <p class="text-white text-center fs-4 mt-4 m-md-0">GuitarLA - Todos los derechos Reservados</p>
+            <footer className="bg-dark mt-5 py-5">
+                <div className="container-xl">
+                    <p className="text-white text-center fs-4 mt-4 m-md-0">GuitarLA - Todos los derechos Reservados</p>
                 </div>
             </footer>
         </>
