@@ -774,3 +774,35 @@ button:not(:disabled),
     z-index: 10;
   }
 }
+
+.animacion-guitarra{
+  transition: all 0.5s ease-in-out;
+
+}
+
+.animacion-guitarra button{
+  transition: scale 0.5s ease-in-out;
+}
+
+.animacion-guitarra:hover button{
+  scale: 0.9;
+}
+
+.precio {
+  transition: all 1s ease-in-out;
+}
+
+.animacion-guitarra:hover .precio{
+  scale: 1.1;
+}
+
+.animacion-guitarra:hover{
+  cursor: pointer;
+  scale: 0.95;
+  border-radius: 20px;
+  transform: translateY(-10px);
+  box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.2);
+}
+.w-90{
+  width: 90% !important;
+}
