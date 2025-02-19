@@ -4,13 +4,15 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './Components/Header'
 import Guitar from './Components/Guitar'
+import Footer from './Components/Footer'
 
 function App() {
     const [count, setCount] = useState(0)
+    const [load, setLoad] = useState(false)
 
     return (
         <>
-            <Header />
+            <Header estado={load} funcion={setLoad} />
 
             <main className="container-fluid w-90 mt-5">
                 <h2 className="text-center">Nuestra Colección</h2>
@@ -43,12 +45,7 @@ function App() {
                 </div>
             </main>
 
-
-            <footer className="bg-dark mt-5 py-5">
-                <div className="container-xl">
-                    <p className="text-white text-center fs-4 mt-4 m-md-0">GuitarLA - Todos los derechos Reservados</p>
-                </div>
-            </footer>
+            <Footer/>
         </>
     )
 }

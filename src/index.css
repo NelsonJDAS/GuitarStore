@@ -806,3 +806,35 @@ button:not(:disabled),
 .w-90{
   width: 90% !important;
 }
+.contenedor-header{
+  transition: all 1s ease-in-out;
+}
+.btn-inicio{
+  background-color: transparent;
+  border-radius: 10px;
+  border: 2px solid yellow;
+  color: yellow;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-inicio:hover {
+  scale: 1.05;
+  cursor: pointer;
+  color: white;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 0, 0.12);
+}
+
+.contenido-principal-header{
+  transition: all 2s ease-in-out;
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.contenido-principal-header.activo{
+  transform: translateY(0px);
+  opacity: 1;
+}
