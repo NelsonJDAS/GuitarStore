@@ -9,9 +9,6 @@ const Header = ({ estado, funcion }) => {
 
   return (
     <div>
-      <button onClick={() => {
-        funcion(!estado)
-      }}>click me</button>
       <header className="py-5 header align-content-center contenedor-header" style={{ height: estado ? "200px" : "700px" }}>
         <div className="container-xl">
           {
@@ -82,7 +79,7 @@ const Header = ({ estado, funcion }) => {
           </div>
               :
               <>
-              <div className={`container w-50 ${userLoad ? "contenido-principal-header activo" : "contenido-principal-header"}`}>
+              <div className={`container w-75 ${userLoad ? "animacion activo" : "animacion"}`}>
                 <div className="row">
                 <a href="index.html">
                   <img className="img-fluid" src="./public/img/logo.svg" alt="imagen logo" />
