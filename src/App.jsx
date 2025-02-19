@@ -7,15 +7,16 @@ import ListaGuitarras from './Components/ListaGuitarras'
 function App() {
     const [count, setCount] = useState(0)
     const [load, setLoad] = useState(false)
-
+    const [cart, setCart] = useState([])
 
     return (
         <>
-            <Header estado={load} funcion={setLoad} />
+        <button onClick={() => console.log(cart)}>adas</button>
+            <Header estado={load} funcion={setLoad} cart={cart} />
 
-            {load ? <ListaGuitarras estado={load}/> : ""}
+            {load && <ListaGuitarras cart={setCart} estado={load}/>}
 
-            <Footer/>
+            {load && <Footer/>}
         </>
     )
 }
