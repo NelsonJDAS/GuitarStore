@@ -1,6 +1,6 @@
-const Guitar = ({cart, nombre, img, descripcion, precio }) => {
+const Guitar = ({addToCart, cart, nombre, img, descripcion, precio, id }) => {
 
-        const object = {nombre : nombre, img : img, precio : precio}
+        const object = {nombre : nombre, img : img, precio : precio, id : id}
 
     return (
         <div className="col-4 my-4 align-items-center">
@@ -17,8 +17,8 @@ const Guitar = ({cart, nombre, img, descripcion, precio }) => {
                     <p className="text-center">
                         {descripcion}
                     </p>
-                    <p className="fw-black text-primary fs-3 text-center precio">{precio}</p>
-                    <button type="button" className="btn btn-dark w-100 rounded-pill" onClick={() => cart(prevCart =>  [...prevCart, object])}>
+                    <p className="fw-black text-primary fs-3 text-center precio">${precio}</p>
+                    <button type="button" className="btn btn-dark w-100 rounded-pill" onClick={() => addToCart(object)}>
                         Agregar al Carrito
                     </button>
                 </div>
