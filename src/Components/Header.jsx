@@ -13,7 +13,7 @@ const Header = ({ estado, funcion, cart, remove, disminuir, incrementar, vaciar 
 
   return (
     <div>
-      <header className="py-5 header align-content-center contenedor-header" style={{ height: estado ? "200px" : "695px" }}>
+      <header className="py-5 header align-content-center contenedor-header" style={{ height: estado ? "200px" : window.innerHeight }}>
         <div className="container-xl">
           {
             estado ?
@@ -87,7 +87,7 @@ const Header = ({ estado, funcion, cart, remove, disminuir, incrementar, vaciar 
                                 }
                               </tbody>
                             </table>
-                          <p className="text-end">Total pagar: <span className="fw-bold">{cartTotal.toFixed(2)}</span></p>
+                          <p className="text-end">Total pagar:<span className="fw-bold">{cartTotal.toFixed(2)}</span></p>
                           <button className="btn btn-dark w-100 mt-3 p-2" onClick={() => vaciar()}>Vaciar Carrito</button>
                           </>}
                       </div>

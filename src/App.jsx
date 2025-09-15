@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import Header from './Components/Header'
 import Footer from './Components/Footer'
@@ -7,6 +7,10 @@ import ListaGuitarras from './Components/ListaGuitarras'
 function App() {
     const [load, setLoad] = useState(false)
     const [cart, setCart] = useState([])
+
+    useEffect(() => {
+        localStorage.setItem("cart", JSON.stringify(cart))
+    }, [cart])
 
     const AddToCard = (item) => {
         console.log(item)
@@ -20,7 +24,6 @@ function App() {
             item.quantity = 1
             setCart([...cart, item])
         }
-        console.log(cart)
     }
 
     const RemoveFromCart = (id) => {
@@ -29,7 +32,7 @@ function App() {
 
     const Incrementar = (id) => {
         const updateCart = cart.map(item => {
-            if(item.id === id && item.quantity < 5) {
+            if (item.id === id && item.quantity < 5) {
                 return {
                     ...item,
                     quantity: item.quantity + 1
@@ -42,7 +45,7 @@ function App() {
 
     const Disminuir = (id) => {
         const updateCart = cart.map(item => {
-            if(item.id === id && item.quantity > 1) {
+            if (item.id === id && item.quantity > 1) {
                 return {
                     ...item,
                     quantity: item.quantity - 1
@@ -56,14 +59,16 @@ function App() {
         setCart([])
     }
 
+
+
     return (
         <>
-        <button onClick={() => console.log(cart)}>adas</button>
             <Header estado={load} funcion={setLoad} remove={RemoveFromCart} cart={cart} incrementar={Incrementar} disminuir={Disminuir} vaciar={VaciarCarrito} />
 
-            {load && <ListaGuitarras cart={setCart} funcion={AddToCard}/>}
+            {load && <ListaGuitarras cart={setCart} funcion={AddToCard} />}
 
-            {load && <Footer/>}
+            {load && <Footer />}
+            <button onClick={() => console.log(cart)}>adas</button>
         </>
     )
 }
