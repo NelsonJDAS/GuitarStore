@@ -12,13 +12,13 @@ const Guitar = ({addToCart, cart, nombre, img, descripcion, precio, id }) => {
                         alt="imagen guitarra"
                     />
                 </div>
-                <div className="col-8">
-                    <h3 className="text-black fs-4 fw-bold text-uppercase text-center">{nombre}</h3>
-                    <p className="text-center">
+                <div className="col-8 align-items-center d-flex flex-column justify-content-center">
+                    <h3 className="text-black fs-2 fw-bold text-uppercase text-center ">{nombre}</h3>
+                    <p className="text-center fs-4">
                         {descripcion}
                     </p>
-                    <p className="fw-black text-primary fs-3 text-center precio">${precio}</p>
-                    <button type="button" className="btn btn-dark w-100 rounded-pill" onClick={() => addToCart(object)}>
+                    <p className="fw-black text-primary fs-1 text-center precio">${precio}</p>
+                    <button type="button" className="btn btn-dark w-100 rounded-pill py-2 fs-4" onClick={() => addToCart(object)}>
                         Agregar al Carrito
                     </button>
                 </div>
