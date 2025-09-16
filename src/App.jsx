@@ -5,8 +5,11 @@ import Footer from './Components/Footer'
 import ListaGuitarras from './Components/ListaGuitarras'
 
 function App() {
+
+    const localStorageCart = JSON.parse(localStorage.getItem("cart")) || []
+
     const [load, setLoad] = useState(false)
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState(localStorageCart)
 
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(cart))
@@ -68,7 +71,6 @@ function App() {
             {load && <ListaGuitarras cart={setCart} funcion={AddToCard} />}
 
             {load && <Footer />}
-            <button onClick={() => console.log(cart)}>adas</button>
         </>
     )
 }
